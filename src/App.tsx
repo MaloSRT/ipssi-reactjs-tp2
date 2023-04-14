@@ -1,4 +1,8 @@
 import { useState } from "react";
+// Import de la liste de produits et du component ProductList
+import { PRODUCTS as productList } from "./productList";
+import ProductList from "./components/ProductList";
+
 import "./App.css";
 
 export default function App() {
@@ -22,6 +26,7 @@ export default function App() {
         onChange={handleChange}
       />
       <br />
+      <ProductList data={productList} searchTerm={searchTerm} />
     </div>
   );
 }

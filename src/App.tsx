@@ -1,5 +1,6 @@
 import { useState } from "react";
-// Import de la liste de produits et du component ProductList
+
+// Import de la liste de produits et des components ProductList et SearchBar
 import { PRODUCTS as productList } from "./productList";
 import ProductList from "./components/ProductList";
 import SearchBar from "./components/SearchBar";
@@ -17,6 +18,7 @@ export default function App() {
     <div className="App max-w-7xl w-full mx-auto">
       <div className="flex flex-col items-center justify-center py-6 gap-4">
         <h1 className="text-3xl font-bold">Liste de produits</h1>
+        {/* On passe la fonction handleChange et la valeur de l'input en props */}
         <SearchBar handleChange={handleChange} searchTerm={searchTerm} />
       </div>
       {/* On passe la liste de produits et la valeur de l'input en props */}

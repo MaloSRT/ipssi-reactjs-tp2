@@ -3,6 +3,7 @@ type SearchBarProps = {
   searchTerm: string;
 };
 
+// On récupère la fonction handleChange et la valeur de l'input en props
 export default function SearchBar({
   handleChange,
   searchTerm,
@@ -33,6 +34,7 @@ export default function SearchBar({
             ></path>
           </svg>
         </div>
+        {/* Lorsque l'utilisateur tape dans l'input, la fonction handleChange est appelée et searchTerm est mis à jour */}
         <input
           type="search"
           id="default-search"

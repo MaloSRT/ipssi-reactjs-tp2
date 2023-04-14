@@ -18,12 +18,13 @@ export default function ProductList({ data, searchTerm }: ProductListProps) {
   });
 
   // Si la liste des produits filtrés est vide, on affiche un message d'erreur
-  if (!filteredProducts.length) return <p>Aucun produit trouvé</p>;
+  if (!filteredProducts.length)
+    return <p className="text-center">Aucun produit trouvé</p>;
 
   return (
-    <div className="relative overflow-x-auto">
-      <table className="w-full text-sm text-left">
-        <thead className="text-xs uppercase bg-gray-50">
+    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             <th scope="col" className="px-6 py-3">
               Catégorie
@@ -42,8 +43,16 @@ export default function ProductList({ data, searchTerm }: ProductListProps) {
         <tbody>
           {/* On boucle sur les produits filtrés pour les afficher dans le tableau */}
           {filteredProducts.map((product, index) => (
-            <tr key={index} className="bg-white border-b">
-              <td className="px-6 py-4">{product.category}</td>
+            <tr
+              key={index}
+              className="bg-white border-b dark:bg-gray-900 dark:border-gray-700"
+            >
+              <th
+                scope="row"
+                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                {product.category}
+              </th>
               <td className="px-6 py-4">{product.name}</td>
               <td className="px-6 py-4">{product.price}</td>
               <td className="px-6 py-4">

@@ -13,7 +13,7 @@ export default function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App max-w-7xl w-full mx-auto">
       <div className="flex flex-col items-center justify-center py-6 gap-4">
         <h1 className="text-3xl font-bold">Liste de produits</h1>
         <input
@@ -23,7 +23,7 @@ export default function App() {
           placeholder="Rechercher..."
           value={searchTerm}
           onChange={handleChange}
-          className="form-input px-4 py-3 rounded-full"
+          className="form-input px-4 py-3 rounded-2xl text-black"
         />
       </div>
       {/* On passe la liste de produits et la valeur de l'input en props */}

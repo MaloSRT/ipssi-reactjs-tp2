@@ -21,28 +21,38 @@ export default function ProductList({ data, searchTerm }: ProductListProps) {
   if (!filteredProducts.length) return <p>Aucun produit trouvé</p>;
 
   return (
-    <table style={{ width: "100%" }}>
-      <thead>
-        <tr>
-          <th>Catégorie</th>
-          <th>Nom</th>
-          <th>Prix</th>
-          <th>Image</th>
-        </tr>
-      </thead>
-      <tbody>
-        {/* On boucle sur les produits filtrés pour les afficher dans le tableau */}
-        {filteredProducts.map((product, index) => (
-          <tr key={index}>
-            <td>{product.category}</td>
-            <td>{product.name}</td>
-            <td>{product.price}</td>
-            <td>
-              <img src={product.imageUrl} alt={product.name} />
-            </td>
+    <div className="relative overflow-x-auto">
+      <table className="w-full text-sm text-left">
+        <thead className="text-xs uppercase bg-gray-50">
+          <tr>
+            <th scope="col" className="px-6 py-3">
+              Catégorie
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Nom
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Prix
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Image
+            </th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {/* On boucle sur les produits filtrés pour les afficher dans le tableau */}
+          {filteredProducts.map((product, index) => (
+            <tr key={index} className="bg-white border-b">
+              <td className="px-6 py-4">{product.category}</td>
+              <td className="px-6 py-4">{product.name}</td>
+              <td className="px-6 py-4">{product.price}</td>
+              <td className="px-6 py-4">
+                <img src={product.imageUrl} alt={product.name} />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }

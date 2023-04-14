@@ -3,8 +3,6 @@ import { useState } from "react";
 import { PRODUCTS as productList } from "./productList";
 import ProductList from "./components/ProductList";
 
-import "./App.css";
-
 export default function App() {
   // On utilise useState pour stocker la valeur de l'input de recherche
   const [searchTerm, setSearchTerm] = useState("");
@@ -16,16 +14,19 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Liste de produits</h1>
-      <input
-        type="text"
-        name="product_name"
-        id="product_name"
-        placeholder="Rechercher..."
-        value={searchTerm}
-        onChange={handleChange}
-      />
-      <br />
+      <div className="flex flex-col items-center justify-center py-6 gap-4">
+        <h1 className="text-3xl font-bold">Liste de produits</h1>
+        <input
+          type="text"
+          name="product_name"
+          id="product_name"
+          placeholder="Rechercher..."
+          value={searchTerm}
+          onChange={handleChange}
+          className="form-input px-4 py-3 rounded-full"
+        />
+      </div>
+      {/* On passe la liste de produits et la valeur de l'input en props */}
       <ProductList data={productList} searchTerm={searchTerm} />
     </div>
   );

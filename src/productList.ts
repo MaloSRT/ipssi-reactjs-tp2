@@ -1,5 +1,6 @@
 import { Product } from "./types/product";
 
+// Liste des produits
 export const PRODUCTS: Product[] = [
   {
     category: "Fruits",

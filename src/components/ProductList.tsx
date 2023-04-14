@@ -17,6 +17,9 @@ export default function ProductList({ data, searchTerm }: ProductListProps) {
     return filteredList;
   });
 
+  // Si la liste des produits filtrés est vide, on affiche un message d'erreur
+  if (!filteredProducts.length) return <p>Aucun produit trouvé</p>;
+
   return (
     <table style={{ width: "100%" }}>
       <thead>

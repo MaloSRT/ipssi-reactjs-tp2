@@ -56,7 +56,11 @@ export default function ProductList({ data, searchTerm }: ProductListProps) {
               <td className="px-6 py-4">{product.name}</td>
               <td className="px-6 py-4">{product.price}</td>
               <td className="px-6 py-4">
-                <img src={product.imageUrl} alt={product.name} />
+                <img
+                  src={product.imageUrl}
+                  alt={product.name}
+                  className="h-auto max-w-xs rounded-md"
+                />
               </td>
             </tr>
           ))}

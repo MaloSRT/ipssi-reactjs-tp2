@@ -24,14 +24,19 @@ export default function ProductList({ data, searchTerm }: ProductListProps) {
           <th>Catégorie</th>
           <th>Nom</th>
           <th>Prix</th>
+          <th>Image</th>
         </tr>
       </thead>
       <tbody>
+        {/* On boucle sur les produits filtrés pour les afficher dans le tableau */}
         {filteredProducts.map((product, index) => (
           <tr key={index}>
             <td>{product.category}</td>
             <td>{product.name}</td>
             <td>{product.price}</td>
+            <td>
+              <img src={product.imageUrl} alt={product.name} />
+            </td>
           </tr>
         ))}
       </tbody>
